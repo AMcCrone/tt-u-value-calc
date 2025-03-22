@@ -319,11 +319,14 @@ def create_parallel_plot(results_df, target_u_value):
     # Create a copy of the dataframe for plotting
     plot_df = results_df.copy()
     
-    # Create the parallel coordinates plot
+    # Create the parallel coordinates plot with color based on meeting target
+    # Using color_continuous_scale instead of color_discrete_map
     fig = px.parallel_coordinates(
         plot_df, 
-        color="Meets Target",
-        color_discrete_map={True: TT_MidBlue, False: TT_Orange},
+        color="U-Value (W/m²K)",  # Color by U-value instead
+        color_continuous_scale=[[0, TT_MidBlue], [1, TT_Orange]],
+        range_color=[plot_df["U-Value (W/m²K)"].min(), 
+                    max(plot_df["U-Value (W/m²K)"].max(), target_u_value * 1.2)],
         dimensions=[col for col in plot_df.columns if col not in ["Meets Target"]],
         labels={col: col for col in plot_df.columns if col not in ["Meets Target"]},
     )
