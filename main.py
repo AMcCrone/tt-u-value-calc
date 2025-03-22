@@ -815,7 +815,7 @@ with tab2:
                     st.subheader("All Results")
                     
                     # Add filter for showing only configurations that meet the target
-                    show_only_passing = st.checkbox("Show only configurations that meet the target", value=True)
+                    show_only_passing = st.checkbox("Show only configurations that meet the target", value=False)
                     
                     # Apply filter if checked
                     filtered_results = results[results["Meets Target"]] if show_only_passing else results
