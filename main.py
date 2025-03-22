@@ -19,18 +19,18 @@ st.markdown("""
     <style>
     .main-header {
         font-size: 2.5rem;
-        color: #00303c;
+        color: rgb(0,48,60);
         text-align: center;
         margin-bottom: 1rem;
     }
     .subheader {
         font-size: 1.8rem;
-        color: #00303c;
+        color: rgb(0,48,60);
         margin-top: 2rem;
         margin-bottom: 1rem;
     }
     .info-box {
-        background-color: #e7f8f9;
+        background-color: rgb(207,241,242);
         padding: 1rem;
         border-radius: 5px;
         margin-bottom: 1rem;
@@ -38,7 +38,7 @@ st.markdown("""
     .u-value-display {
         font-size: 2rem;
         font-weight: bold;
-        color: #db451d;
+        color: rgb(211,69,29);
         text-align: center;
         margin: 1rem 0;
     }
@@ -47,29 +47,29 @@ st.markdown("""
         border-radius: 5px;
     }
     .layer-row-alt {
-        background-color: #f8f9fa;
+        background-color: rgb(223,224,225);
     }
     .surface-resistance {
-        background-color: #e0f7fa;
+        background-color: rgb(136,219,223);
         padding: 10px;
         border-radius: 5px;
         margin: 5px 0;
-        border-left: 4px solid #00bcd4;
+        border-left: 4px solid rgb(0,163,173);
     }
     .best-config {
-        background-color: #e8f5e9;
+        background-color: rgb(207,241,242);
         padding: 15px;
         border-radius: 5px;
         margin: 15px 0;
-        border-left: 4px solid #4caf50;
+        border-left: 4px solid rgb(0,163,173);
     }
     .target-header {
-        background-color: #e7f8f9;
+        background-color: rgb(207,241,242);
         padding: 15px;
         border-radius: 5px;
         text-align: center;
         margin-bottom: 20px;
-        border: 2px solid #00bcd4;
+        border: 2px solid rgb(0,163,173);
     }
     </style>
 """, unsafe_allow_html=True)
