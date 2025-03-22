@@ -16,44 +16,6 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Custom CSS
-st.markdown("""
-<style>
-    .main {
-        background-color: #f5f7f9;
-    }
-    .stApp {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    h1, h2, h3 {
-        color: #2c3e50;
-    }
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 24px;
-    }
-    .stTabs [data-baseweb="tab"] {
-        height: 50px;
-        white-space: pre-wrap;
-        background-color: #f1f3f6;
-        border-radius: 4px 4px 0 0;
-        gap: 1px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .stTabs [aria-selected="true"] {
-        background-color: #4e8cff;
-        color: white;
-    }
-    .info-box {
-        background-color: #e6f3ff;
-        border-left: 5px solid #4e8cff;
-        padding: 10px;
-        border-radius: 4px;
-    }
-</style>
-""", unsafe_allow_html=True)
-
 # Title and Introduction
 st.title("Wall U-Value Calculator")
 st.markdown("""
@@ -355,7 +317,7 @@ with tab1:
                 "material": selected_material,
                 "thickness": thickness
             })
-            st.experimental_rerun()
+            st.rerun()  # Updated from st.experimental_rerun()
     
     # Display and edit current layers
     if st.session_state.layers:
@@ -385,12 +347,12 @@ with tab1:
             with col4:
                 if st.button("Delete", key=f"delete_{i}"):
                     st.session_state.layers.pop(i)
-                    st.experimental_rerun()
+                    st.rerun()  # Updated from st.experimental_rerun()
         
         # Clear all layers
         if st.button("Clear All Layers"):
             st.session_state.layers = []
-            st.experimental_rerun()
+            st.rerun()  # Updated from st.experimental_rerun()
 
 # Sensitivity Analysis Tab
 with tab2:
@@ -537,7 +499,7 @@ with tab2:
                                 st.session_state.layers[idx]["thickness"] = int(best_config[key])
                             
                             st.success("Applied the best configuration to your wall design!")
-                            st.experimental_rerun()
+                            st.rerun()  # Updated from st.experimental_rerun()
                     
                     # Display full results table
                     with st.expander("View All Results"):
